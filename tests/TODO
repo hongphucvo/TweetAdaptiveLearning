@@ -1,0 +1,25 @@
+- Test Kafka:
+    Kafka test using shell script to execute and track the container performance 
+    The performance will be test within the increasement of data size and concurrency of data coming.
+    Data size will increase from 1KB to 1GB, with exponential increase.
+    Concurrency will increase from 1 to 2
+    Then we test for the data integrity and latency
+
+- Test Spark:
+    Spark test using Apache Bench to execute and track the system performance based on the local Hadoop base.
+    The performance will be test within the increasement of data size and concurrency of data coming.
+    Data size will increase from 1KB to 10GB, with exponential increase.
+    Data synthetic or duplicated Sentiment140 dataset
+    Spark will load and perform data retrieval and be tracked the performance executor memory/cpu bottlenecks.
+
+
+- Test Elasticsearch:
+    Using rally tool to test the scalaility of elastic search, which have been up in docker container.
+    The performance will be test based on the query time of a text at different number of records in an index.
+
+- Test Active Learning Model:
+    Using python script to track the total time costing for each data size as the data stream coming. 
+    The model will read data directly from local (no ES needed), we track the performance of training pipeline
+    
+
+    

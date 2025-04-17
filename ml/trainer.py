@@ -45,7 +45,7 @@ es.indices.create(index=METRIC_INDEX, ignore=400)
 tolist_udf = F.udf(lambda v: v.toArray().tolist(), ArrayType(FloatType()))
 
 # def extract_feature(pipeline_model, df):
-#     pipeline_model.transform(df).withColumn("features", tolist_udf("features"))
+#     pipeline_model.transform(df).withColumn("features", tolist_udf("features")).cache()
 # def to_query(strategy):
 
 class LabelSimulator:
@@ -186,7 +186,7 @@ class Strategy:
         else:
             df_unlab_tr = self.df_unlab 
 
-        df_unlab_tr = df_unlab_tr.withColumn("query", self.to_query("features")) 
+        df_unlab_tr = df_unlab_tr.withColumn("query", self.to_query("features")).cache() 
 
 
         df_queried = df_unlab_tr.filter("query") \
@@ -243,9 +243,9 @@ df_test = spark.read.format("org.elasticsearch.spark.sql") \
 
 ## feat extract
 df_tr = feature_extraction(df)\
-            .withColumn("features", tolist_udf("features"))
+            .withColumn("features", tolist_udf("features")).cache()
 df_test_tr = feature_extraction(df_test)\
-                .withColumn("features", tolist_udf("features"))\
+                .withColumn("features", tolist_udf("features")).cache()\
                 .toPandas()
 
 X_test = np.stack(df_test_tr["features"].to_numpy())
@@ -268,7 +268,7 @@ acc,f1_neg, f1_pos ,loss = log_and_eval_model(learner.estimator, trainer.hparams
 
 es.index(
     index = METRIC_INDEX,
-    doc_type = "_doc",
+    doc_type = "doc",
     body = dict(
         n_new_samples=len(learner.X_training), 
         acc=acc, 
@@ -298,7 +298,7 @@ while True:
         ## 
         new_df_tr = feature_extraction(new_df) \
                 .withColumn("features", tolist_udf("features")) \
-                .toPandas()
+                .cache().toPandas()
         
 
         X_new = np.stack(new_df_tr["features"].to_numpy())
@@ -314,7 +314,7 @@ while True:
 
         es.index(
             index = METRIC_INDEX,
-            doc_type = "_doc",
+            doc_type = "doc",
             body = dict(
                 n_new_samples=n, 
                 acc=acc, 
