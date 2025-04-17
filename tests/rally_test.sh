@@ -37,12 +37,12 @@ for cnt in "${RECORD_COUNTS[@]}"; do
   # Slice JSONL
   # head -n $((cnt+1)) "$DATA_DIR/training.jsonl" > "$DATA_DIR/training_${cnt}.jsonl"
 
-  # # Create per-run track
-  # TMP_TRACK="rally-tracks/ksea_${cnt}"
-  # rm -rf "$TMP_TRACK"
-  # cp -r "$TRACK_PATH" "$TMP_TRACK"
-  # sed -i "s|training.jsonl|training_${cnt}.jsonl|g" "$TMP_TRACK/track.json"
-  # pip install esrally
+  # Create per-run track
+  TMP_TRACK="rally-tracks/ksea_${cnt}"
+  rm -rf "$TMP_TRACK"
+  cp -r "$TRACK_PATH" "$TMP_TRACK"
+  sed -i "s|training.jsonl|training_${cnt}.jsonl|g" "$TMP_TRACK/track.json"
+
   # Run index challenge
   
   # Run index challenge using Docker
