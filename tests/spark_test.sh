@@ -16,9 +16,19 @@ RESULTS_DIR=results/spark
 PAYLOAD_DIR=payloads/spark
 mkdir -p "$RESULTS_DIR" "$PAYLOAD_DIR"
 
+# Cleanup function
+cleanup() {
+    echo "Cleaning up test files..."
+    rm -rf "$PAYLOAD_DIR"
+    # docker-compose -f "$COMPOSE_FILE" down
+}
+
+# Set trap for cleanup on script exit
+trap cleanup EXIT
+
 # Test parameters
-# Sizes: 1KB to 10GB exponential
-SIZES=(1024 10240 102400 1024000 10240000 102400000 1024000000 10240000000)
+# Sizes: 1KB to 10GB exponential (1K, 10K, 100K, 1M, 10M, 100M, 1G, 10G)
+SIZES=(1024 10240 102400 1048576 10485760 104857600 1073741824 10737418240)
 CONC=(1 2)
 REQUESTS=1000
 
@@ -26,8 +36,11 @@ echo "Running Spark HTTP throughput tests..."
 for size in "${SIZES[@]}"; do
   payload="$PAYLOAD_DIR/payload_${size}.bin"
   if [ ! -f "$payload" ]; then
-    echo "  - Generating payload of ${size} bytes"
-    head -c "$size" </dev/urandom >"$payload"
+    echo "  - Generating payload of ${size} bytes ($(numfmt --to=iec-i --suffix=B ${size}))"
+    dd if=/dev/urandom of="$payload" bs=1048576 count=$((size/1048576)) status=progress 2>/dev/null
+    if [ $((size%1048576)) -ne 0 ]; then
+      dd if=/dev/urandom of="$payload" bs=$((size%1048576)) count=1 conv=notrunc oflag=append 2>/dev/null
+    fi
   fi
   for c in "${CONC[@]}"; do
     echo "  => size=${size} concurrency=${c}"

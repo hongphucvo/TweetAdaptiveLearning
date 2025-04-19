@@ -24,17 +24,13 @@ from elasticsearch import Elasticsearch
 
 
 QUERY_AMOUNT = 5000
-TEST_INDEX = 'test-kakfa-ingestion-flow'
-POOL_INDEX = 'spark_index'
+TEST_INDEX = 'test-kakfa-ingestion-flow/_doc'
+POOL_INDEX = 'spark_index/doc'
 METRIC_INDEX = 'active_learning_performance'
 
 spark = SparkSession.Builder() \
     .appName("data_processor") \
-    .config("spark.jars.packages", "org.elasticsearch:elasticsearch-spark-30_2.12:8.15.1") \
-    .config("es.nodes", "localhost") \
-    .config("es.port", "9200") \
-    .config("es.nodes.wan.only", "true") \
-    .config("spark.eventLog.enabled", "true") \
+    .config("spark.jars.packages", "org.elasticsearch:elasticsearch-spark-30_2.12:8.6.2") \
     .master("local[4]").getOrCreate()
 
 es = Elasticsearch("http://localhost:9200")

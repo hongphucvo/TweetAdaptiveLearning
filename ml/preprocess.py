@@ -20,7 +20,7 @@ import string
 
 from pyspark.sql.dataframe import DataFrame
 from ml.slang_words import slang, emojis
-from pyspark.ml.functions import vector_to_array
+
 
 class Preprocessor(
     Transformer, HasInputCol, HasOutputCol, DefaultParamsReadable, DefaultParamsWritable
@@ -104,20 +104,22 @@ class Preprocessor(
         return df.withColumn(output_col, transform_udf(input_col))
 
 
-def feature_extraction(df: DataFrame) -> DataFrame:
-    """Simple feature extraction pipeline using TF-IDF"""
-    # Tokenize text
-    tokenizer = Tokenizer(inputCol="text", outputCol="words")
-    words_data = tokenizer.transform(df)
-    
-    # Calculate term frequency
-    hashingTF = HashingTF(inputCol="words", outputCol="tf", numFeatures=20)
-    tf_data = hashingTF.transform(words_data)
-    
-    # Calculate IDF
-    idf = IDF(inputCol="tf", outputCol="features")
-    idf_model = idf.fit(tf_data)
-    
-    # Generate final features
-    return idf_model.transform(tf_data)
+def feature_extraction(df):
+    preprocessor = Preprocessor(input_col="text", output_col="text_clean")
+    # Tokenize into words
+    tokenizer = Tokenizer(inputCol="text_clean", outputCol="tokenized")
+    # Remove stopwords
+    remover = StopWordsRemover(inputCol=tokenizer.getOutputCol(), outputCol="filtered")
+    # Compute term frequencies and hash into buckets
+    hashing_tf = HashingTF(
+        inputCol=tokenizer.getOutputCol(), outputCol="hashed", numFeatures=1000
+    )
+    # Convert to TF-IDF
+    idf = IDF(inputCol=hashing_tf.getOutputCol(), outputCol="features")
+
+    pipeline = Pipeline(stages=[preprocessor, tokenizer, remover, hashing_tf, idf])
+    pipeline_model = pipeline.fit(df)
+
+
+    return pipeline_model.transform(df)
 

@@ -1,0 +1,5 @@
+Records,MessageSize,Throughput(records/sec),TotalTime(ms)
+1000,1024,0.00,0.00
+10000,1024,0.00,0.00
+100000,1024,0.00,0.00
+1000000,1024,0.00,0.00
