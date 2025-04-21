@@ -1,0 +1,41 @@
+Running Kafka tests...
+bash kafka_test.sh
+Starting Kafka performance tests...
+Checking docker compose services...
+Creating test topic: kafka-perf-test
+Created topic kafka-perf-test.
+Testing with 1000 records of size 1024 bytes
+Producer test...
+1000 records sent, 2304.147465 records/sec (2.25 MB/sec), 25.82 ms avg latency, 385.00 ms max latency, 25 ms 50th, 34 ms 95th, 35 ms 99th, 385 ms 99.9th.
+Consumer test...
+start.time, end.time, data.consumed.in.MB, MB.sec, data.consumed.in.nMsg, nMsg.sec, rebalance.time.ms, fetch.time.ms, fetch.MB.sec, fetch.nMsg.sec
+WARNING: Exiting before consuming the expected number of messages: timeout (10000 ms) exceeded. You can use the --timeout option to increase the timeout.
+2025-04-19 11:59:49:108, 2025-04-19 11:59:59:164, 0.0000, 0.0000, 0, 0.0000, 0, 10056, 0.0000, 0.0000
+Testing with 10000 records of size 1024 bytes
+Producer test...
+10000 records sent, 16155.088853 records/sec (15.78 MB/sec), 93.63 ms avg latency, 380.00 ms max latency, 100 ms 50th, 143 ms 95th, 144 ms 99th, 145 ms 99.9th.
+Consumer test...
+start.time, end.time, data.consumed.in.MB, MB.sec, data.consumed.in.nMsg, nMsg.sec, rebalance.time.ms, fetch.time.ms, fetch.MB.sec, fetch.nMsg.sec
+WARNING: Exiting before consuming the expected number of messages: timeout (10000 ms) exceeded. You can use the --timeout option to increase the timeout.
+2025-04-19 12:00:05:892, 2025-04-19 12:00:15:938, 0.0000, 0.0000, 0, 0.0000, 0, 10046, 0.0000, 0.0000
+Testing with 100000 records of size 1024 bytes
+Producer test...
+100000 records sent, 54436.581383 records/sec (53.16 MB/sec), 334.10 ms avg latency, 500.00 ms max latency, 357 ms 50th, 473 ms 95th, 492 ms 99th, 499 ms 99.9th.
+Consumer test...
+start.time, end.time, data.consumed.in.MB, MB.sec, data.consumed.in.nMsg, nMsg.sec, rebalance.time.ms, fetch.time.ms, fetch.MB.sec, fetch.nMsg.sec
+
+
+WARNING: Exiting before consuming the expected number of messages: timeout (10000 ms) exceeded. You can use the --timeout option to increase the timeout.
+2025-04-19 12:00:24:065, 2025-04-19 12:00:34:102, 0.0000, 0.0000, 0, 0.0000, 0, 10037, 0.0000, 0.0000
+Testing with 1000000 records of size 1024 bytes
+Producer test...
+358707 records sent, 71741.4 records/sec (70.06 MB/sec), 369.9 ms avg latency, 515.0 ms max latency.
+386145 records sent, 77229.0 records/sec (75.42 MB/sec), 395.7 ms avg latency, 586.0 ms max latency.
+1000000 records sent, 74288.685833 records/sec (72.55 MB/sec), 390.92 ms avg latency, 642.00 ms max latency, 384 ms 50th, 534 ms 95th, 628 ms 99th, 639 ms 99.9th.
+Consumer test...
+start.time, end.time, data.consumed.in.MB, MB.sec, data.consumed.in.nMsg, nMsg.sec, rebalance.time.ms, fetch.time.ms, fetch.MB.sec, fetch.nMsg.sec
+WARNING: Exiting before consuming the expected number of messages: timeout (10000 ms) exceeded. You can use the --timeout option to increase the timeout.
+2025-04-19 12:00:53:659, 2025-04-19 12:01:03:713, 0.0000, 0.0000, 0, 0.0000, 0, 10054, 0.0000, 0.0000
+Cleaning up test topic...
+Performance tests completed. Results saved in ./test_results
+Do you want to stop docker compose services? (y/n) 

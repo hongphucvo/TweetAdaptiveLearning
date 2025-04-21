@@ -2,4 +2,4 @@
 mlruns
 __pycache__
 data/training.csv
-*.log
+# *.log

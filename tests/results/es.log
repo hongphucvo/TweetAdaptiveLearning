@@ -1,0 +1,664 @@
+Running Elasticsearch tests...
+docker pull elastic/rally:latest
+latest: Pulling from elastic/rally
+Digest: sha256:6d6ad17797faa6dd01304212cac0d8577554060011be6195778009a580a89600
+Status: Image is up to date for elastic/rally:latest
+docker.io/elastic/rally:latest
+bash rally_test.sh
+test_elasticsearch is up-to-date
+Waiting for Elasticsearch to start...
+Converting CSV to JSONL for Rally...
+==> Running Rally for 1000 records
+Requested 1000 records, got 1000 records
+Starting index challenge for 1000 records...
+
+    ____        ____
+   / __ \____ _/ / /_  __
+  / /_/ / __ `/ / / / / /
+ / _, _/ /_/ / / / /_/ /
+/_/ |_|\__,_/_/_/\__, /
+                /____/
+
+[INFO] Preparing file offset table for [/rally-tracks/custom/training_1000.jsonl] ... [OK]
+Running bulk                                                                   [100% done]
+[INFO] Racing on track [custom], challenge [index] and car ['external'] with version [8.13.1].
+
+
+------------------------------------------------------
+    _______             __   _____
+   / ____(_)___  ____ _/ /  / ___/_________  ________
+  / /_  / / __ \/ __ `/ /   \__ \/ ___/ __ \/ ___/ _ \
+ / __/ / / / / / /_/ / /   ___/ / /__/ /_/ / /  /  __/
+/_/   /_/_/ /_/\__,_/_/   /____/\___/\____/_/   \___/
+------------------------------------------------------
+            
+Metric,Task,Value,Unit
+Cumulative indexing time of primary shards,,0.0011166666666666666,min
+Min cumulative indexing time across primary shards,,0.0011166666666666666,min
+Median cumulative indexing time across primary shards,,0.0011166666666666666,min
+Max cumulative indexing time across primary shards,,0.0011166666666666666,min
+Cumulative indexing throttle time of primary shards,,0,min
+Min cumulative indexing throttle time across primary shards,,0,min
+Median cumulative indexing throttle time across primary shards,,0,min
+Max cumulative indexing throttle time across primary shards,,0,min
+Cumulative merge time of primary shards,,0,min
+Cumulative merge count of primary shards,,0,
+Min cumulative merge time across primary shards,,0,min
+Median cumulative merge time across primary shards,,0,min
+Max cumulative merge time across primary shards,,0,min
+Cumulative merge throttle time of primary shards,,0,min
+Min cumulative merge throttle time across primary shards,,0,min
+Median cumulative merge throttle time across primary shards,,0,min
+Max cumulative merge throttle time across primary shards,,0,min
+Cumulative refresh time of primary shards,,0.0007666666666666667,min
+Cumulative refresh count of primary shards,,3,
+Min cumulative refresh time across primary shards,,0.0007666666666666667,min
+Median cumulative refresh time across primary shards,,0.0007666666666666667,min
+Max cumulative refresh time across primary shards,,0.0007666666666666667,min
+Cumulative flush time of primary shards,,0,min
+Cumulative flush count of primary shards,,0,
+Min cumulative flush time across primary shards,,0,min
+Median cumulative flush time across primary shards,,0,min
+Max cumulative flush time across primary shards,,0,min
+Total Young Gen GC time,,0,s
+Total Young Gen GC count,,0,
+Total Old Gen GC time,,0,s
+Total Old Gen GC count,,0,
+Dataset size,,0.000386054627597332,GB
+Store size,,0.000386054627597332,GB
+Translog size,,0.00025568529963493347,GB
+Heap used for segments,,0,MB
+Heap used for doc values,,0,MB
+Heap used for terms,,0,MB
+Heap used for norms,,0,MB
+Heap used for points,,0,MB
+Heap used for stored fields,,0,MB
+Segment count,,1,
+Total Ingest Pipeline count,,0,
+Total Ingest Pipeline time,,0,s
+Total Ingest Pipeline failed,,0,
+Min Throughput,bulk,306.29,docs/s
+Mean Throughput,bulk,306.29,docs/s
+Median Throughput,bulk,306.29,docs/s
+Max Throughput,bulk,306.29,docs/s
+100th percentile latency,bulk,3216.82857000269,ms
+100th percentile service time,bulk,3216.82857000269,ms
+error rate,bulk,0.00,%
+
+[INFO] Race id is [debb1c3e-86ad-41b5-be46-a2e98eaf2cfe]
+
+--------------------------------
+[INFO] SUCCESS (took 31 seconds)
+--------------------------------
+Starting query challenge for 1000 records...
+
+    ____        ____
+   / __ \____ _/ / /_  __
+  / /_/ / __ `/ / / / / /
+ / _, _/ /_/ / / / /_/ /
+/_/ |_|\__,_/_/_/\__, /
+                /____/
+
+Running search                                                                 [100% done]
+[INFO] Racing on track [custom], challenge [query] and car ['external'] with version [8.13.1].
+
+
+------------------------------------------------------
+    _______             __   _____
+   / ____(_)___  ____ _/ /  / ___/_________  ________
+  / /_  / / __ \/ __ `/ /   \__ \/ ___/ __ \/ ___/ _ \
+ / __/ / / / / / /_/ / /   ___/ / /__/ /_/ / /  /  __/
+/_/   /_/_/ /_/\__,_/_/   /____/\___/\____/_/   \___/
+------------------------------------------------------
+            
+Metric,Task,Value,Unit
+Cumulative indexing time of primary shards,,0.0011166666666666666,min
+Min cumulative indexing time across primary shards,,0.0011166666666666666,min
+Median cumulative indexing time across primary shards,,0.0011166666666666666,min
+Max cumulative indexing time across primary shards,,0.0011166666666666666,min
+Cumulative indexing throttle time of primary shards,,0,min
+Min cumulative indexing throttle time across primary shards,,0,min
+Median cumulative indexing throttle time across primary shards,,0,min
+Max cumulative indexing throttle time across primary shards,,0,min
+Cumulative merge time of primary shards,,0,min
+Cumulative merge count of primary shards,,0,
+Min cumulative merge time across primary shards,,0,min
+Median cumulative merge time across primary shards,,0,min
+Max cumulative merge time across primary shards,,0,min
+Cumulative merge throttle time of primary shards,,0,min
+Min cumulative merge throttle time across primary shards,,0,min
+Median cumulative merge throttle time across primary shards,,0,min
+Max cumulative merge throttle time across primary shards,,0,min
+Cumulative refresh time of primary shards,,0.0007666666666666667,min
+Cumulative refresh count of primary shards,,3,
+Min cumulative refresh time across primary shards,,0.0007666666666666667,min
+Median cumulative refresh time across primary shards,,0.0007666666666666667,min
+Max cumulative refresh time across primary shards,,0.0007666666666666667,min
+Cumulative flush time of primary shards,,0,min
+Cumulative flush count of primary shards,,0,
+Min cumulative flush time across primary shards,,0,min
+Median cumulative flush time across primary shards,,0,min
+Max cumulative flush time across primary shards,,0,min
+Total Young Gen GC time,,0,s
+Total Young Gen GC count,,0,
+Total Old Gen GC time,,0,s
+Total Old Gen GC count,,0,
+Dataset size,,0.000386054627597332,GB
+Store size,,0.000386054627597332,GB
+Translog size,,0.00025568529963493347,GB
+Heap used for segments,,0,MB
+Heap used for doc values,,0,MB
+Heap used for terms,,0,MB
+Heap used for norms,,0,MB
+Heap used for points,,0,MB
+Heap used for stored fields,,0,MB
+Segment count,,1,
+Total Ingest Pipeline count,,0,
+Total Ingest Pipeline time,,0,s
+Total Ingest Pipeline failed,,0,
+Min Throughput,search,66.53,ops/s
+Mean Throughput,search,66.53,ops/s
+Median Throughput,search,66.53,ops/s
+Max Throughput,search,66.53,ops/s
+100th percentile latency,search,13.443506002658978,ms
+100th percentile service time,search,13.443506002658978,ms
+error rate,search,0.00,%
+
+[INFO] Race id is [90646fc9-d343-499d-9d40-3d02905c10c2]
+
+--------------------------------
+[INFO] SUCCESS (took 26 seconds)
+--------------------------------
+==> Running Rally for 10000 records
+Deleting existing index...
+{"acknowledged":true}Requested 10000 records, got 10000 records
+Starting index challenge for 10000 records...
+
+    ____        ____
+   / __ \____ _/ / /_  __
+  / /_/ / __ `/ / / / / /
+ / _, _/ /_/ / / / /_/ /
+/_/ |_|\__,_/_/_/\__, /
+                /____/
+
+[INFO] Preparing file offset table for [/rally-tracks/custom/training_10000.jsonl] ... [OK]
+Running bulk                                                                   [100% done]
+[INFO] Racing on track [custom], challenge [index] and car ['external'] with version [8.13.1].
+
+
+------------------------------------------------------
+    _______             __   _____
+   / ____(_)___  ____ _/ /  / ___/_________  ________
+  / /_  / / __ \/ __ `/ /   \__ \/ ___/ __ \/ ___/ _ \
+ / __/ / / / / / /_/ / /   ___/ / /__/ /_/ / /  /  __/
+/_/   /_/_/ /_/\__,_/_/   /____/\___/\____/_/   \___/
+------------------------------------------------------
+            
+Metric,Task,Value,Unit
+Cumulative indexing time of primary shards,,0.005083333333333333,min
+Min cumulative indexing time across primary shards,,0.005083333333333333,min
+Median cumulative indexing time across primary shards,,0.005083333333333333,min
+Max cumulative indexing time across primary shards,,0.005083333333333333,min
+Cumulative indexing throttle time of primary shards,,0,min
+Min cumulative indexing throttle time across primary shards,,0,min
+Median cumulative indexing throttle time across primary shards,,0,min
+Max cumulative indexing throttle time across primary shards,,0,min
+Cumulative merge time of primary shards,,0,min
+Cumulative merge count of primary shards,,0,
+Min cumulative merge time across primary shards,,0,min
+Median cumulative merge time across primary shards,,0,min
+Max cumulative merge time across primary shards,,0,min
+Cumulative merge throttle time of primary shards,,0,min
+Min cumulative merge throttle time across primary shards,,0,min
+Median cumulative merge throttle time across primary shards,,0,min
+Max cumulative merge throttle time across primary shards,,0,min
+Cumulative refresh time of primary shards,,0.004066666666666666,min
+Cumulative refresh count of primary shards,,4,
+Min cumulative refresh time across primary shards,,0.004066666666666666,min
+Median cumulative refresh time across primary shards,,0.004066666666666666,min
+Max cumulative refresh time across primary shards,,0.004066666666666666,min
+Cumulative flush time of primary shards,,0,min
+Cumulative flush count of primary shards,,0,
+Min cumulative flush time across primary shards,,0,min
+Median cumulative flush time across primary shards,,0,min
+Max cumulative flush time across primary shards,,0,min
+Total Young Gen GC time,,0,s
+Total Young Gen GC count,,0,
+Total Old Gen GC time,,0,s
+Total Old Gen GC count,,0,
+Dataset size,,3.8836151361465454e-07,GB
+Store size,,3.8836151361465454e-07,GB
+Translog size,,0.0025346362963318825,GB
+Heap used for segments,,0,MB
+Heap used for doc values,,0,MB
+Heap used for terms,,0,MB
+Heap used for norms,,0,MB
+Heap used for points,,0,MB
+Heap used for stored fields,,0,MB
+Segment count,,2,
+Total Ingest Pipeline count,,0,
+Total Ingest Pipeline time,,0,s
+Total Ingest Pipeline failed,,0,
+Min Throughput,bulk,1557.84,docs/s
+Mean Throughput,bulk,1558.07,docs/s
+Median Throughput,bulk,1558.07,docs/s
+Max Throughput,bulk,1558.29,docs/s
+50th percentile latency,bulk,1775.2143189864,ms
+100th percentile latency,bulk,3162.6889709732495,ms
+50th percentile service time,bulk,1775.2143189864,ms
+100th percentile service time,bulk,3162.6889709732495,ms
+error rate,bulk,0.00,%
+
+[INFO] Race id is [31c14c35-3107-4e4c-bd51-786f419c7514]
+
+--------------------------------
+[INFO] SUCCESS (took 31 seconds)
+--------------------------------
+Starting query challenge for 10000 records...
+
+    ____        ____
+   / __ \____ _/ / /_  __
+  / /_/ / __ `/ / / / / /
+ / _, _/ /_/ / / / /_/ /
+/_/ |_|\__,_/_/_/\__, /
+                /____/
+
+Running search                                                                 [100% done]
+[INFO] Racing on track [custom], challenge [query] and car ['external'] with version [8.13.1].
+
+
+------------------------------------------------------
+    _______             __   _____
+   / ____(_)___  ____ _/ /  / ___/_________  ________
+  / /_  / / __ \/ __ `/ /   \__ \/ ___/ __ \/ ___/ _ \
+ / __/ / / / / / /_/ / /   ___/ / /__/ /_/ / /  /  __/
+/_/   /_/_/ /_/\__,_/_/   /____/\___/\____/_/   \___/
+------------------------------------------------------
+            
+Metric,Task,Value,Unit
+Cumulative indexing time of primary shards,,0.005083333333333333,min
+Min cumulative indexing time across primary shards,,0.005083333333333333,min
+Median cumulative indexing time across primary shards,,0.005083333333333333,min
+Max cumulative indexing time across primary shards,,0.005083333333333333,min
+Cumulative indexing throttle time of primary shards,,0,min
+Min cumulative indexing throttle time across primary shards,,0,min
+Median cumulative indexing throttle time across primary shards,,0,min
+Max cumulative indexing throttle time across primary shards,,0,min
+Cumulative merge time of primary shards,,0,min
+Cumulative merge count of primary shards,,0,
+Min cumulative merge time across primary shards,,0,min
+Median cumulative merge time across primary shards,,0,min
+Max cumulative merge time across primary shards,,0,min
+Cumulative merge throttle time of primary shards,,0,min
+Min cumulative merge throttle time across primary shards,,0,min
+Median cumulative merge throttle time across primary shards,,0,min
+Max cumulative merge throttle time across primary shards,,0,min
+Cumulative refresh time of primary shards,,0.004066666666666666,min
+Cumulative refresh count of primary shards,,4,
+Min cumulative refresh time across primary shards,,0.004066666666666666,min
+Median cumulative refresh time across primary shards,,0.004066666666666666,min
+Max cumulative refresh time across primary shards,,0.004066666666666666,min
+Cumulative flush time of primary shards,,0,min
+Cumulative flush count of primary shards,,0,
+Min cumulative flush time across primary shards,,0,min
+Median cumulative flush time across primary shards,,0,min
+Max cumulative flush time across primary shards,,0,min
+Total Young Gen GC time,,0,s
+Total Young Gen GC count,,0,
+Total Old Gen GC time,,0,s
+Total Old Gen GC count,,0,
+Dataset size,,0.003494967706501484,GB
+Store size,,0.003494967706501484,GB
+Translog size,,0.0025346362963318825,GB
+Heap used for segments,,0,MB
+Heap used for doc values,,0,MB
+Heap used for terms,,0,MB
+Heap used for norms,,0,MB
+Heap used for points,,0,MB
+Heap used for stored fields,,0,MB
+Segment count,,2,
+Total Ingest Pipeline count,,0,
+Total Ingest Pipeline time,,0,s
+Total Ingest Pipeline failed,,0,
+Min Throughput,search,70.47,ops/s
+Mean Throughput,search,70.47,ops/s
+Median Throughput,search,70.47,ops/s
+Max Throughput,search,70.47,ops/s
+100th percentile latency,search,12.528279010439292,ms
+100th percentile service time,search,12.528279010439292,ms
+error rate,search,0.00,%
+
+[INFO] Race id is [5377c9b4-6d3c-434e-ac7f-90e6fd1b3a7d]
+
+--------------------------------
+[INFO] SUCCESS (took 26 seconds)
+--------------------------------
+==> Running Rally for 100000 records
+Deleting existing index...
+{"acknowledged":true}Requested 100000 records, got 10000 records
+Starting index challenge for 100000 records...
+
+    ____        ____
+   / __ \____ _/ / /_  __
+  / /_/ / __ `/ / / / / /
+ / _, _/ /_/ / / / /_/ /
+/_/ |_|\__,_/_/_/\__, /
+                /____/
+
+[INFO] Preparing file offset table for [/rally-tracks/custom/training_100000.jsonl] ... [OK]
+Running bulk                                                                   [100% done]
+[INFO] Racing on track [custom], challenge [index] and car ['external'] with version [8.13.1].
+
+
+------------------------------------------------------
+    _______             __   _____
+   / ____(_)___  ____ _/ /  / ___/_________  ________
+  / /_  / / __ \/ __ `/ /   \__ \/ ___/ __ \/ ___/ _ \
+ / __/ / / / / / /_/ / /   ___/ / /__/ /_/ / /  /  __/
+/_/   /_/_/ /_/\__,_/_/   /____/\___/\____/_/   \___/
+------------------------------------------------------
+            
+Metric,Task,Value,Unit
+Cumulative indexing time of primary shards,,0.00475,min
+Min cumulative indexing time across primary shards,,0.00475,min
+Median cumulative indexing time across primary shards,,0.00475,min
+Max cumulative indexing time across primary shards,,0.00475,min
+Cumulative indexing throttle time of primary shards,,0,min
+Min cumulative indexing throttle time across primary shards,,0,min
+Median cumulative indexing throttle time across primary shards,,0,min
+Max cumulative indexing throttle time across primary shards,,0,min
+Cumulative merge time of primary shards,,0,min
+Cumulative merge count of primary shards,,0,
+Min cumulative merge time across primary shards,,0,min
+Median cumulative merge time across primary shards,,0,min
+Max cumulative merge time across primary shards,,0,min
+Cumulative merge throttle time of primary shards,,0,min
+Min cumulative merge throttle time across primary shards,,0,min
+Median cumulative merge throttle time across primary shards,,0,min
+Max cumulative merge throttle time across primary shards,,0,min
+Cumulative refresh time of primary shards,,0.0016166666666666666,min
+Cumulative refresh count of primary shards,,3,
+Min cumulative refresh time across primary shards,,0.0016166666666666666,min
+Median cumulative refresh time across primary shards,,0.0016166666666666666,min
+Max cumulative refresh time across primary shards,,0.0016166666666666666,min
+Cumulative flush time of primary shards,,0,min
+Cumulative flush count of primary shards,,0,
+Min cumulative flush time across primary shards,,0,min
+Median cumulative flush time across primary shards,,0,min
+Max cumulative flush time across primary shards,,0,min
+Total Young Gen GC time,,0,s
+Total Young Gen GC count,,0,
+Total Old Gen GC time,,0,s
+Total Old Gen GC count,,0,
+Dataset size,,0.0022256001830101013,GB
+Store size,,0.0022256001830101013,GB
+Translog size,,0.0025346362963318825,GB
+Heap used for segments,,0,MB
+Heap used for doc values,,0,MB
+Heap used for terms,,0,MB
+Heap used for norms,,0,MB
+Heap used for points,,0,MB
+Heap used for stored fields,,0,MB
+Segment count,,1,
+Total Ingest Pipeline count,,0,
+Total Ingest Pipeline time,,0,s
+Total Ingest Pipeline failed,,0,
+Min Throughput,bulk,1189.14,docs/s
+Mean Throughput,bulk,1189.20,docs/s
+Median Throughput,bulk,1189.20,docs/s
+Max Throughput,bulk,1189.26,docs/s
+50th percentile latency,bulk,2295.216789992992,ms
+100th percentile latency,bulk,4155.919863987947,ms
+50th percentile service time,bulk,2295.216789992992,ms
+100th percentile service time,bulk,4155.919863987947,ms
+error rate,bulk,0.00,%
+
+[INFO] Race id is [99c0b4b9-021c-4874-a491-bd92f63ff1dc]
+
+--------------------------------
+[INFO] SUCCESS (took 31 seconds)
+--------------------------------
+Starting query challenge for 100000 records...
+
+    ____        ____
+   / __ \____ _/ / /_  __
+  / /_/ / __ `/ / / / / /
+ / _, _/ /_/ / / / /_/ /
+/_/ |_|\__,_/_/_/\__, /
+                /____/
+
+Running search                                                                 [100% done]
+[INFO] Racing on track [custom], challenge [query] and car ['external'] with version [8.13.1].
+
+
+------------------------------------------------------
+    _______             __   _____
+   / ____(_)___  ____ _/ /  / ___/_________  ________
+  / /_  / / __ \/ __ `/ /   \__ \/ ___/ __ \/ ___/ _ \
+ / __/ / / / / / /_/ / /   ___/ / /__/ /_/ / /  /  __/
+/_/   /_/_/ /_/\__,_/_/   /____/\___/\____/_/   \___/
+------------------------------------------------------
+            
+Metric,Task,Value,Unit
+Cumulative indexing time of primary shards,,0.00475,min
+Min cumulative indexing time across primary shards,,0.00475,min
+Median cumulative indexing time across primary shards,,0.00475,min
+Max cumulative indexing time across primary shards,,0.00475,min
+Cumulative indexing throttle time of primary shards,,0,min
+Min cumulative indexing throttle time across primary shards,,0,min
+Median cumulative indexing throttle time across primary shards,,0,min
+Max cumulative indexing throttle time across primary shards,,0,min
+Cumulative merge time of primary shards,,0,min
+Cumulative merge count of primary shards,,0,
+Min cumulative merge time across primary shards,,0,min
+Median cumulative merge time across primary shards,,0,min
+Max cumulative merge time across primary shards,,0,min
+Cumulative merge throttle time of primary shards,,0,min
+Min cumulative merge throttle time across primary shards,,0,min
+Median cumulative merge throttle time across primary shards,,0,min
+Max cumulative merge throttle time across primary shards,,0,min
+Cumulative refresh time of primary shards,,0.0035,min
+Cumulative refresh count of primary shards,,4,
+Min cumulative refresh time across primary shards,,0.0035,min
+Median cumulative refresh time across primary shards,,0.0035,min
+Max cumulative refresh time across primary shards,,0.0035,min
+Cumulative flush time of primary shards,,0,min
+Cumulative flush count of primary shards,,0,
+Min cumulative flush time across primary shards,,0,min
+Median cumulative flush time across primary shards,,0,min
+Max cumulative flush time across primary shards,,0,min
+Total Young Gen GC time,,0,s
+Total Young Gen GC count,,0,
+Total Old Gen GC time,,0,s
+Total Old Gen GC count,,0,
+Dataset size,,0.0035501765087246895,GB
+Store size,,0.0035501765087246895,GB
+Translog size,,0.0025346362963318825,GB
+Heap used for segments,,0,MB
+Heap used for doc values,,0,MB
+Heap used for terms,,0,MB
+Heap used for norms,,0,MB
+Heap used for points,,0,MB
+Heap used for stored fields,,0,MB
+Segment count,,2,
+Total Ingest Pipeline count,,0,
+Total Ingest Pipeline time,,0,s
+Total Ingest Pipeline failed,,0,
+Min Throughput,search,69.59,ops/s
+Mean Throughput,search,69.59,ops/s
+Median Throughput,search,69.59,ops/s
+Max Throughput,search,69.59,ops/s
+100th percentile latency,search,12.732161994790658,ms
+100th percentile service time,search,12.732161994790658,ms
+error rate,search,0.00,%
+
+[INFO] Race id is [2443e8b1-3f88-4691-afd7-9c93956cc45a]
+
+--------------------------------
+[INFO] SUCCESS (took 26 seconds)
+--------------------------------
+==> Running Rally for 1000000 records
+Deleting existing index...
+{"acknowledged":true}Requested 1000000 records, got 10000 records
+Starting index challenge for 1000000 records...
+
+    ____        ____
+   / __ \____ _/ / /_  __
+  / /_/ / __ `/ / / / / /
+ / _, _/ /_/ / / / /_/ /
+/_/ |_|\__,_/_/_/\__, /
+                /____/
+
+[INFO] Preparing file offset table for [/rally-tracks/custom/training_1000000.jsonl] ... [OK]
+Running bulk                                                                   [100% done]
+[INFO] Racing on track [custom], challenge [index] and car ['external'] with version [8.13.1].
+
+
+------------------------------------------------------
+    _______             __   _____
+   / ____(_)___  ____ _/ /  / ___/_________  ________
+  / /_  / / __ \/ __ `/ /   \__ \/ ___/ __ \/ ___/ _ \
+ / __/ / / / / / /_/ / /   ___/ / /__/ /_/ / /  /  __/
+/_/   /_/_/ /_/\__,_/_/   /____/\___/\____/_/   \___/
+------------------------------------------------------
+            
+Metric,Task,Value,Unit
+Cumulative indexing time of primary shards,,0.0049,min
+Min cumulative indexing time across primary shards,,0.0049,min
+Median cumulative indexing time across primary shards,,0.0049,min
+Max cumulative indexing time across primary shards,,0.0049,min
+Cumulative indexing throttle time of primary shards,,0,min
+Min cumulative indexing throttle time across primary shards,,0,min
+Median cumulative indexing throttle time across primary shards,,0,min
+Max cumulative indexing throttle time across primary shards,,0,min
+Cumulative merge time of primary shards,,0,min
+Cumulative merge count of primary shards,,0,
+Min cumulative merge time across primary shards,,0,min
+Median cumulative merge time across primary shards,,0,min
+Max cumulative merge time across primary shards,,0,min
+Cumulative merge throttle time of primary shards,,0,min
+Min cumulative merge throttle time across primary shards,,0,min
+Median cumulative merge throttle time across primary shards,,0,min
+Max cumulative merge throttle time across primary shards,,0,min
+Cumulative refresh time of primary shards,,0.004333333333333333,min
+Cumulative refresh count of primary shards,,3,
+Min cumulative refresh time across primary shards,,0.004333333333333333,min
+Median cumulative refresh time across primary shards,,0.004333333333333333,min
+Max cumulative refresh time across primary shards,,0.004333333333333333,min
+Cumulative flush time of primary shards,,0,min
+Cumulative flush count of primary shards,,0,
+Min cumulative flush time across primary shards,,0,min
+Median cumulative flush time across primary shards,,0,min
+Max cumulative flush time across primary shards,,0,min
+Total Young Gen GC time,,0,s
+Total Young Gen GC count,,0,
+Total Old Gen GC time,,0,s
+Total Old Gen GC count,,0,
+Dataset size,,0.0033772150054574013,GB
+Store size,,0.0033772150054574013,GB
+Translog size,,0.0025346362963318825,GB
+Heap used for segments,,0,MB
+Heap used for doc values,,0,MB
+Heap used for terms,,0,MB
+Heap used for norms,,0,MB
+Heap used for points,,0,MB
+Heap used for stored fields,,0,MB
+Segment count,,1,
+Total Ingest Pipeline count,,0,
+Total Ingest Pipeline time,,0,s
+Total Ingest Pipeline failed,,0,
+Min Throughput,bulk,1302.66,docs/s
+Mean Throughput,bulk,1302.77,docs/s
+Median Throughput,bulk,1302.77,docs/s
+Max Throughput,bulk,1302.88,docs/s
+50th percentile latency,bulk,2110.4614709911402,ms
+100th percentile latency,bulk,3787.9738339979667,ms
+50th percentile service time,bulk,2110.4614709911402,ms
+100th percentile service time,bulk,3787.9738339979667,ms
+error rate,bulk,0.00,%
+
+[INFO] Race id is [3e5e6df7-e8a4-4975-8d1f-85fed29c93b2]
+
+--------------------------------
+[INFO] SUCCESS (took 31 seconds)
+--------------------------------
+Starting query challenge for 1000000 records...
+
+    ____        ____
+   / __ \____ _/ / /_  __
+  / /_/ / __ `/ / / / / /
+ / _, _/ /_/ / / / /_/ /
+/_/ |_|\__,_/_/_/\__, /
+                /____/
+
+Running search                                                                 [100% done]
+[INFO] Racing on track [custom], challenge [query] and car ['external'] with version [8.13.1].
+
+
+------------------------------------------------------
+    _______             __   _____
+   / ____(_)___  ____ _/ /  / ___/_________  ________
+  / /_  / / __ \/ __ `/ /   \__ \/ ___/ __ \/ ___/ _ \
+ / __/ / / / / / /_/ / /   ___/ / /__/ /_/ / /  /  __/
+/_/   /_/_/ /_/\__,_/_/   /____/\___/\____/_/   \___/
+------------------------------------------------------
+            
+Metric,Task,Value,Unit
+Cumulative indexing time of primary shards,,0.0049,min
+Min cumulative indexing time across primary shards,,0.0049,min
+Median cumulative indexing time across primary shards,,0.0049,min
+Max cumulative indexing time across primary shards,,0.0049,min
+Cumulative indexing throttle time of primary shards,,0,min
+Min cumulative indexing throttle time across primary shards,,0,min
+Median cumulative indexing throttle time across primary shards,,0,min
+Max cumulative indexing throttle time across primary shards,,0,min
+Cumulative merge time of primary shards,,0,min
+Cumulative merge count of primary shards,,0,
+Min cumulative merge time across primary shards,,0,min
+Median cumulative merge time across primary shards,,0,min
+Max cumulative merge time across primary shards,,0,min
+Cumulative merge throttle time of primary shards,,0,min
+Min cumulative merge throttle time across primary shards,,0,min
+Median cumulative merge throttle time across primary shards,,0,min
+Max cumulative merge throttle time across primary shards,,0,min
+Cumulative refresh time of primary shards,,0.004333333333333333,min
+Cumulative refresh count of primary shards,,3,
+Min cumulative refresh time across primary shards,,0.004333333333333333,min
+Median cumulative refresh time across primary shards,,0.004333333333333333,min
+Max cumulative refresh time across primary shards,,0.004333333333333333,min
+Cumulative flush time of primary shards,,0,min
+Cumulative flush count of primary shards,,0,
+Min cumulative flush time across primary shards,,0,min
+Median cumulative flush time across primary shards,,0,min
+Max cumulative flush time across primary shards,,0,min
+Total Young Gen GC time,,0,s
+Total Young Gen GC count,,0,
+Total Old Gen GC time,,0,s
+Total Old Gen GC count,,0,
+Dataset size,,0.0033772150054574013,GB
+Store size,,0.0033772150054574013,GB
+Translog size,,0.0025346362963318825,GB
+Heap used for segments,,0,MB
+Heap used for doc values,,0,MB
+Heap used for terms,,0,MB
+Heap used for norms,,0,MB
+Heap used for points,,0,MB
+Heap used for stored fields,,0,MB
+Segment count,,1,
+Total Ingest Pipeline count,,0,
+Total Ingest Pipeline time,,0,s
+Total Ingest Pipeline failed,,0,
+Min Throughput,search,81.46,ops/s
+Mean Throughput,search,81.46,ops/s
+Median Throughput,search,81.46,ops/s
+Max Throughput,search,81.46,ops/s
+100th percentile latency,search,10.652575001586229,ms
+100th percentile service time,search,10.652575001586229,ms
+error rate,search,0.00,%
+
+[INFO] Race id is [d14f4bab-0fb6-42bc-a47c-5a21b985439c]
+
+--------------------------------
+[INFO] SUCCESS (took 26 seconds)
+--------------------------------
+Elasticsearch Rally tests completed. Reports in results/
